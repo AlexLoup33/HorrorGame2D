@@ -88,8 +88,8 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 16, 16 )
 
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 15, 7 )
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 8.26237
 
 [node name="Character" type="KinematicBody2D"]
 scale = Vector2( 1, 0.992112 )
@@ -106,6 +106,7 @@ shape = SubResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionBox"]
 position = Vector2( 0, 25 )
+rotation = 1.5708
 shape = SubResource( 11 )
 
 [connection signal="facing_direction_changed" from="." to="." method="_on_facing_direction_changed"]

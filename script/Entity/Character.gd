@@ -104,6 +104,11 @@ func _update_animation():
 	print(state_dict[state_name]+dir_name)
 	AnimatedSprite.play(state_dict[state_name] + dir_name)
 
+func _update_InteractionBox_direction():
+	var angle = facing_direction.angle()
+	
+	Area2D.set_rotation_degrees(rad2deg(angle)-90)
+
 #### SIGNAL RESPONSES ####
 
 func _on_interactionBox_body_entered(body):
@@ -118,6 +123,7 @@ func _on_state_changed():
 
 func _on_facing_direction_changed():
 	_update_animation()
+	_update_InteractionBox_direction()
 
 func _on_moving_direction_changed():
 	if moving_direction == Vector2.ZERO or moving_direction == facing_direction:
