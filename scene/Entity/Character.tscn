@@ -109,6 +109,11 @@ position = Vector2( 0, 25 )
 rotation = 1.5708
 shape = SubResource( 11 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+rotating = true
+current = true
+zoom = Vector2( 0.9, 0.9 )
+
 [connection signal="facing_direction_changed" from="." to="." method="_on_facing_direction_changed"]
 [connection signal="moving_direction_changed" from="." to="." method="_on_moving_direction_changed"]
 [connection signal="state_changed" from="." to="." method="_on_state_changed"]
