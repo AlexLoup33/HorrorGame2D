@@ -2,9 +2,11 @@ extends KinematicBody2D
 
 onready var AnimatedSprite = $AnimatedSprite
 onready var Area2D = $InteractionBox
-onready var Label = $Label
+onready var Label = $ColorRect/Label
+onready var CoinSound = $CoinSound
 
 var coin;
+var coin_limit;
 var speed = 200
 var moving_direction = Vector2.ZERO setget set_moving_direction, get_moving_direction
 var facing_direction = Vector2.DOWN setget set_facing_direction, get_facing_direction
@@ -62,6 +64,8 @@ func get_moving_direction() -> Vector2:
 
 func _ready():
 	coin = 0
+	coin_limit = 23
+	Label.set_text(str(coin) + " / " + str(coin_limit))
 
 func _physics_process(delta):
 	var __ = move_and_slide(moving_direction * speed)
@@ -110,9 +114,13 @@ func _update_InteractionBox_direction():
 	
 	Area2D.set_rotation_degrees(rad2deg(angle)-90)
 
+func coin_limiter(coinLimit):
+	coin_limit = coinLimit
+
 func pick_coin():
 	coin += 1
-	Label.set_text("coin : " + str(coin))
+	Label.set_text(str(coin) + " / " + str(coin_limit))
+	CoinSound.play()
 
 #### SIGNAL RESPONSES ####
 
