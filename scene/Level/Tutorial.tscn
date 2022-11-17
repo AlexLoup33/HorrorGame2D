@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://ressources/Maze/dungeon/dungeon_.png" type="Texture" id=1]
 [ext_resource path="res://scene/Entity/Character.tscn" type="PackedScene" id=2]
@@ -435,6 +435,11 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 17/z_index = 0
 
+[sub_resource type="CubeMesh" id=20]
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 8.5, 15.5 )
+
 [node name="Tutorial" type="Node2D"]
 script = ExtResource( 4 )
 
@@ -519,4 +524,145 @@ position = Vector2( 128, 60 )
 [node name="Coin23" parent="Coins" instance=ExtResource( 3 )]
 position = Vector2( 128, 33 )
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Coin24" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 176, 0 )
+
+[node name="Coin25" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 175, -18 )
+
+[node name="Coin26" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 176, -42 )
+
+[node name="Coin27" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 175, -65 )
+
+[node name="Coin28" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 152, -81 )
+
+[node name="Coin29" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 119, -80 )
+
+[node name="Coin30" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 85, -81 )
+
+[node name="Coin31" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 47, -80 )
+
+[node name="Coin32" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 19, -81 )
+
+[node name="Coin33" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( -10, -80 )
+
+[node name="Coin34" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( -43, -80 )
+
+[node name="Coin35" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( -79, -81 )
+
+[node name="Coin36" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( -80, -54 )
+
+[node name="Coin37" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( -81, -23 )
+
+[node name="Coin38" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 177, 29 )
+
+[node name="Coin39" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 176, 56 )
+
+[node name="Coin40" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 179, 81 )
+
+[node name="Coin41" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 177, 106 )
+
+[node name="Coin42" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 178, 135 )
+
+[node name="Coin43" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 155, 146 )
+
+[node name="Coin44" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 131, 145 )
+
+[node name="Coin45" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 100, 146 )
+
+[node name="Coin46" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 220, 31 )
+
+[node name="Coin47" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 236, 31 )
+
+[node name="Coin48" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 236, 31 )
+
+[node name="Coin49" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 253, 31 )
+
+[node name="Coin50" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 268, 31 )
+
+[node name="Coin51" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 283, 31 )
+
+[node name="Coin52" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 298, 31 )
+
+[node name="Coin53" parent="Coins" instance=ExtResource( 3 )]
+position = Vector2( 313, 31 )
+
+[node name="Door1" type="Node2D" parent="."]
+
+[node name="Door1" type="StaticBody2D" parent="Door1"]
+position = Vector2( 150, 33 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Door1/Door1"]
+position = Vector2( 2.5, -1.5 )
+scale = Vector2( 7.5, 14.5 )
+mesh = SubResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door1/Door1"]
+position = Vector2( 2.5, -1.5 )
+shape = SubResource( 21 )
+
+[node name="Door2" type="Node2D" parent="."]
+position = Vector2( 49, 1 )
+
+[node name="Door1" type="StaticBody2D" parent="Door2"]
+position = Vector2( 149, 33 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Door2/Door1"]
+position = Vector2( 2.5, -1.5 )
+scale = Vector2( 7.5, 14.5 )
+mesh = SubResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2/Door1"]
+position = Vector2( 2.5, -1.5 )
+shape = SubResource( 21 )
+
+[node name="Door3" type="Node2D" parent="."]
+position = Vector2( 49, 1 )
+
+[node name="Door1" type="StaticBody2D" parent="Door3"]
+position = Vector2( 276, 33 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Door3/Door1"]
+position = Vector2( 2.5, -1.5 )
+scale = Vector2( 7.5, 14.5 )
+mesh = SubResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door3/Door1"]
+position = Vector2( 2.5, -1.5 )
+shape = SubResource( 21 )

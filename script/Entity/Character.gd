@@ -64,8 +64,6 @@ func get_moving_direction() -> Vector2:
 
 func _ready():
 	coin = 0
-	coin_limit = 23
-	Label.set_text(str(coin) + " / " + str(coin_limit))
 
 func _physics_process(delta):
 	var __ = move_and_slide(moving_direction * speed)
@@ -114,8 +112,9 @@ func _update_InteractionBox_direction():
 	
 	Area2D.set_rotation_degrees(rad2deg(angle)-90)
 
-func coin_limiter(coinLimit):
-	coin_limit = coinLimit
+func coin_limiter(x : int) -> void:
+	coin_limit = x
+	Label.set_text(str(coin) + " / " + str(coin_limit))
 
 func pick_coin():
 	coin += 1
