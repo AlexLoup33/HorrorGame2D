@@ -2,8 +2,10 @@ extends KinematicBody2D
 
 onready var AnimatedSprite = $AnimatedSprite
 onready var Area2D = $InteractionBox
+onready var Label = $Label
 
-var speed = 400
+var coin;
+var speed = 200
 var moving_direction = Vector2.ZERO setget set_moving_direction, get_moving_direction
 var facing_direction = Vector2.DOWN setget set_facing_direction, get_facing_direction
 
@@ -59,7 +61,7 @@ func get_moving_direction() -> Vector2:
 #### BUILT-IN ####
 
 func _ready():
-	pass
+	coin = 0
 
 func _physics_process(delta):
 	var __ = move_and_slide(moving_direction * speed)
@@ -101,13 +103,16 @@ func _update_animation():
 	match(state):
 		STATE.Idle: state_name = STATE.Idle
 		STATE.Move: state_name = STATE.Move
-	print(state_dict[state_name]+dir_name)
 	AnimatedSprite.play(state_dict[state_name] + dir_name)
 
 func _update_InteractionBox_direction():
 	var angle = facing_direction.angle()
 	
 	Area2D.set_rotation_degrees(rad2deg(angle)-90)
+
+func pick_coin():
+	coin += 1
+	Label.set_text("coin : " + str(coin))
 
 #### SIGNAL RESPONSES ####
 

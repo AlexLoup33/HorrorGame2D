@@ -114,6 +114,12 @@ rotating = true
 current = true
 zoom = Vector2( 0.5, 0.5 )
 
+[node name="Label" type="Label" parent="."]
+margin_left = -258.0
+margin_top = -116.0
+margin_right = 6.0
+margin_bottom = -40.0
+
 [connection signal="facing_direction_changed" from="." to="." method="_on_facing_direction_changed"]
 [connection signal="moving_direction_changed" from="." to="." method="_on_moving_direction_changed"]
 [connection signal="state_changed" from="." to="." method="_on_state_changed"]
