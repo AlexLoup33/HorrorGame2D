@@ -12,7 +12,6 @@ enum State {
 
 var state = State.Close
 #### BUILT IN ####
-
 func _ready():
 	Character.coin_limiter(23)
 
