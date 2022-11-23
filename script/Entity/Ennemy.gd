@@ -1,8 +1,6 @@
 extends KinematicBody2D
 
-const speed_normal = 190
-const speed_chase = 220
-var speed;
+export var speed = 160
 var velocity = Vector2.ZERO
 
 var path : Array = []
@@ -16,15 +14,12 @@ onready var Line = $Line2D
 #### BUILT-IN ####
 
 func _ready():
-	speed = speed_normal
 	yield(get_tree(), "idle_frame")
 	var tree = get_tree()
 	if tree.has_group("LevelNavigation"):
-		print("enter")
 		levelNavigation = tree.get_nodes_in_group("LevelNavigation")[0]
 		#levelNavigation = tree.get_nodes_in_groups("LevelNavigation")[0]
 	if tree.has_group("Character"):
-		print("enter 2")
 		character = tree.get_nodes_in_group("Character")[0]
 		#character = tree.get_nodes_in_group("Character")[0]
 
@@ -53,9 +48,15 @@ func position_avaible_around_character() -> Vector2:
 
 func generate_path():
 	if levelNavigation != null and character != null:
-		if not chasing : 
+		if not chasing:
+			print("Hey 1")
 			var arr = position_avaible_around_character()
-			path = levelNavigation.get_simple_path(global_position, character.global_position, false)
+			if not $Timer.is_stopped():
+				print(" WTF The timer is currently playing")
+			else :
+				print("Hello")
+				path = levelNavigation.get_simple_path(global_position, arr, false)
+				$Timer.start()
 		elif chasing : 
 			path = levelNavigation.get_simple_path(global_position, character.global_position, false)
 		
