@@ -22,7 +22,7 @@ func _ready():
 		character = tree.get_nodes_in_group("Character")[0]
 
 func _physics_process(delta):
-	Line.global_position = Vector2.ZERO
+	
 	if character and levelNavigation:
 		generate_path()
 		navigate()
