@@ -14,6 +14,7 @@ var state = State.Close
 #### BUILT IN ####
 func _ready():
 	Character.coin_limiter(23)
+	
 
 # warning-ignore:unused_argument
 func _process(delta):
