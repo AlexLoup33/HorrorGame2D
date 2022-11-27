@@ -1,6 +1,6 @@
 extends Control
 
-var PATH_FILE = "res://save/OptionsMenu.dat"
+var PATH_FILE = "users://save/OptionsMenu.dat"
 
 func _ready():
 	load_save()

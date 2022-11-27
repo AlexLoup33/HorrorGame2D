@@ -20,6 +20,7 @@ margin_left = -643.0
 margin_top = -423.0
 margin_right = 983.0
 margin_bottom = 508.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="LevelNavigation" type="Navigation2D" parent="." groups=["LevelNavigation"]]
 
