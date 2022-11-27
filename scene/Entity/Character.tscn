@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://ressources/Player/IdleUp.png" type="Texture" id=1]
 [ext_resource path="res://ressources/Player/IdleLeft.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://script/Entity/Character.gd" type="Script" id=9]
 [ext_resource path="res://ressources/Object/coin_16x16.png" type="Texture" id=10]
 [ext_resource path="res://ressources/SoundEffect/Object/coinpick.wav" type="AudioStream" id=11]
+[ext_resource path="res://scene/Objects/LightC.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scene/Objects/LightR.tscn" type="PackedScene" id=13]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
@@ -142,6 +144,14 @@ hframes = 15
 [node name="CoinSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 11 )
 volume_db = -15.0
+
+[node name="LightC" parent="." instance=ExtResource( 12 )]
+position = Vector2( 8.34465e-07, -1.90735e-06 )
+scale = Vector2( 3.125, 3.125 )
+
+[node name="LightR" parent="." instance=ExtResource( 13 )]
+position = Vector2( 563, 318 )
+scale = Vector2( 6.8125, 2 )
 
 [connection signal="facing_direction_changed" from="." to="." method="_on_facing_direction_changed"]
 [connection signal="moving_direction_changed" from="." to="." method="_on_moving_direction_changed"]

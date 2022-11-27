@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://script/Object/Coin.gd" type="Script" id=1]
 [ext_resource path="res://ressources/Object/coin_16x16.png" type="Texture" id=2]
+[ext_resource path="res://scene/Objects/LightC.tscn" type="PackedScene" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -68,7 +69,7 @@ animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "default",
-"speed": 25.0
+"speed": 20.0
 } ]
 
 [sub_resource type="CircleShape2D" id=17]
@@ -79,12 +80,16 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 16 )
-frame = 2
+frame = 14
 playing = true
 
 [node name="InteractionBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionBox"]
 shape = SubResource( 17 )
+
+[node name="Light2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5.36442e-07, -5.96046e-07 )
+scale = Vector2( 0.625, 0.625 )
 
 [connection signal="body_entered" from="InteractionBox" to="." method="_on_body_entered"]
