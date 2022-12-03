@@ -80,7 +80,7 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 16 )
-frame = 14
+frame = 4
 playing = true
 
 [node name="InteractionBox" type="Area2D" parent="."]
