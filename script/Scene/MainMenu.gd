@@ -23,10 +23,10 @@ func _on_Play_pressed():
 	get_tree().change_scene("res://scene/Level/Tutorial.tscn")
 
 func _on_Level_pressed():
-	get_tree().change_scene("res://scene/Menu/SelectLevelMenu.tscn")
+	get_tree().change_scene("res://scene/Menu/LevelMenu.tscn")
 
 func _on_Options_pressed():
-	get_tree().change_scene("res://scene/Menu/OptionsMenu.tscn")
+	get_tree().change_scene("res://scene/Menu/OptionMenu.tscn")
 
 func _on_Quit_pressed():
 	get_tree().quit()
