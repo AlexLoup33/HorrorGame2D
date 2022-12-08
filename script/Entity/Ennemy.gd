@@ -9,7 +9,7 @@ var character = null
 
 var chasing = false
 
-onready var Line = $Line2D
+onready var Line = $Line2D         
 
 #### BUILT-IN ####
 
@@ -22,7 +22,6 @@ func _ready():
 		character = tree.get_nodes_in_group("Character")[0]
 
 func _physics_process(delta):
-	
 	if character and levelNavigation:
 		generate_path()
 		navigate()
